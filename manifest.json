@@ -1,0 +1,22 @@
+{
+  "name": "A browser action which changes its icon when clicked",
+  "description": "Click browser action icon to change color!",
+  "version": "1.3",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "icons": { "16": "icon2.png", "48": "icon2.png", "128": "icon2.png" },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"],
+      "all_frames": true
+    }
+  ],
+  "permissions": ["tabs"],
+  "browser_action": {
+    "name": "Click to change the icon's color"
+  },
+  "manifest_version": 2
+}
